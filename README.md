@@ -97,6 +97,31 @@ docker run -it -v $(pwd):/app attendance-app python3 query_attendance.py
   
 git pull origin main  
   
+## 수정 중인 내용과 서버의 최신 내용이 겹칠 때
+
+### ✅ 해결 방법 (3가지 중 선택하세요)
+#### 방법 1: 내가 수정한 내용도 소중할 때 (가장 추천!)
+수정한 내용을 먼저 커밋해서 안전하게 저장한 뒤에 pull을 받습니다.  
+  
+git add README.md  
+git commit -m "home 폴더에서 README 수정"  
+git pull origin main  
+  
+참고: pull을 했을 때 같은 줄을 수정했다면 '충돌(Conflict)'이 날 수 있습니다. 그때는 아까 설명해 드린 대로 파일을 열어 수정하면 됩니다.  
+  
+#### 방법 2: 내가 수정한 건 연습이었으니 버려도 될 때  
+home 폴더에서 수정한 내용을 완전히 무시하고 서버에 있는 최신 파일로 강제로 맞춥니다.  
+  
+git checkout -- README.md
+git pull origin main
+
+#### 방법 3: 일단 수정한 걸 잠시 치워두고 싶을 때 (Stash)  
+수정한 내용을 임시 보관함에 넣어두고 pull을 받은 뒤, 나중에 다시 꺼내옵니다.  
+  
+git stash          # 수정사항 임시 보관  
+git pull origin main  
+git stash pop      # 보관했던 수정사항 다시 합치기  
+  
 # 출석 관리 시스템 고도화 (심화 학습)  
   
 ## 1. 기능 분리 및 설정 파일 도입 
