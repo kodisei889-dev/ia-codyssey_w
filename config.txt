@@ -1,0 +1,12 @@
+{
+    "start_date": "2026-11-01",
+    "end_date": "2026-11-30",
+    "allowed_weekdays": [
+        0,
+        1,
+        2,
+        3,
+        4
+    ],
+    "total_days": 21
+}
