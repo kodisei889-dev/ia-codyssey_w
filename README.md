@@ -61,6 +61,38 @@ git add: 세이브 포인트를 찾아서 앞에 서 있는 상태 (준비)
 git commit: [저장하시겠습니까? -> YES] 를 눌러서 슬롯 1번에 저장 완료! (확정)  
 git push: 내 컴퓨터에 저장된 슬롯 1번 데이터를 클라우드 서버에 백업하기 (전송)  
 
+# 명령어 정리
+## 1. 로컬(내 컴퓨터)에서 직접 실행할 때
+파이썬이 설치된 환경에서 터미널(또는 CMD)을 열고 아래 명령어를 입력하세요.
+
+### 출석 기록하기 (이름 입력)
+
+python3 attend.py
+(실행 후 이름을 입력하면 attendance.txt에 날짜와 이름이 저장됩니다.)
+
+### 출석 현황 조회하기 (통계 확인)
+
+python3 query_attendance.py
+(실행 전 config.txt 파일이 있는지 꼭 확인하세요!)
+
+## 2. 도커(Docker)를 사용하여 실행할 때
+도커를 사용하면 환경 설정 걱정 없이 어디서든 똑같이 실행할 수 있습니다.
+
+도커 이미지 빌드 (처음 한 번 또는 코드 수정 후)
+
+docker build -t attendance-app .
+도커 컨테이너 실행 (출석 기록/조회)
+데이터를 내 컴퓨터에 저장하기 위해 -v(볼륨 마운트) 옵션을 사용하는 것이 좋습니다.
+
+## 현재 폴더와 도커 안의 /app 폴더를 연결해서 실행
+docker run -it -v $(pwd):/app attendance-app
+(기본적으로 Dockerfile의 CMD에 설정된 파일이 실행됩니다. 보통 attend.py로 설정해 두었을 거예요.)
+
+도커 안에서 특정 파일 실행하기
+만약 query_attendance.py를 실행하고 싶다면 명령어 뒤에 파일명을 붙여줍니다.
+
+docker run -it -v $(pwd):/app attendance-app python3 query_attendance.py
+
 # 출석 관리 시스템 고도화 (심화 학습)  
   
 ## 1. 기능 분리 및 설정 파일 도입 
