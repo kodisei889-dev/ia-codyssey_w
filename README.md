@@ -47,5 +47,5 @@ git push origin main
 
 항상 add - commit - push 단계로 해야 한다.  
 git add: 세이브 포인트를 찾아서 앞에 서 있는 상태 (준비)
-git commit: [저장하시겠습니까? -> YES] 를 눌러서 슬롯 1번에 저장 완료! (확정)
+git commit: [저장하시겠습니까? -> YES] 를 눌러서 슬롯 1번에 저장 완료! (확정)  
 git push: 내 컴퓨터에 저장된 슬롯 1번 데이터를 클라우드 서버에 백업하기 (전송)  
