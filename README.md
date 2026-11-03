@@ -92,7 +92,11 @@ docker run -it -v $(pwd):/app attendance-app
 만약 query_attendance.py를 실행하고 싶다면 명령어 뒤에 파일명을 붙여줍니다.
 
 docker run -it -v $(pwd):/app attendance-app python3 query_attendance.py
-
+  
+## 서버에서 최신 코드 내려받기  
+  
+git pull origin main  
+  
 # 출석 관리 시스템 고도화 (심화 학습)  
   
 ## 1. 기능 분리 및 설정 파일 도입 
