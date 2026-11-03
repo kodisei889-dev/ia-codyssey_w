@@ -39,6 +39,17 @@ docker run -it -v ${PWD}:/app my-attend-app
 문장 맨 끝에서 스페이스 바를 두 번 누르고 엔터  
   
   
+# 브랜치 생성 및 이동
+git checkout -b feature-rate  
+(이제 main이 아닌 feature-rate라는 별도의 작업 공간에서 작업하게 됩니다.)  
+
+# 커밋 및 합치기(Merge)
+git add .  
+git commit -m "출석률 계산 기능 추가"  
+git checkout main        # 메인으로 돌아가기  
+git merge feature-rate   # 만든 기능 합치기  
+  
+
 기억할 것 [저장]  
 git add . # 모든 변경 사항을 스테이징 영역에 추가  
 git add 파일이름.확장자  
